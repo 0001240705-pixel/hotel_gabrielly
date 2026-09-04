@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Login do Cliente</title>
+     <link rel="stylesheet" href="css/estilo.css">
+     <style>
+    form {
+        width: 300px;
+        margin: auto;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #0056b3;
+        color: white;
+    }
+</style>
+    </head>
+    <body>
+<h1 style="text-align: center;">Canto do Vento</h1>
+<h2 style="color: #333333; text-align: center;">Acesso do Cliente</h2>
+<form action="autenticar.php" method="POST">
+<label for="email">E-mail:</label>
+<input type="email" id="email" name="email" required>
+<br><br>
+<label for="senha">Senha:</label>
+<input type="password" id="senha" name="senha" required>
+ <br><br>
+<button type="submit">Entrar</button>
+</form>
+<p style="text-align: center;">Ainda nao sou cadastrado?
+<a href="cadastro_cliente.html">Cadastre-se</a>
+</p>
+</body></html>
