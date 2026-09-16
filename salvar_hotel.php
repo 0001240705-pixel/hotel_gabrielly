@@ -8,8 +8,10 @@ $email = $_POST ['email'];
 $sql = "INSERT INTO hoteis (nome,cidade,estrelas,email,senha) VALUES ('$nome', '$cidade', '$estrelas', '$senha', '$email')";
 
 if (mysqli_query($conexao, $sql)) {
+    echo "Hotel cadastrado com sucesso";
+    echo "<br> <a href= 'login.html.html'> Ir para Login </a>";
 }
 else {
-
+echo "Erro ao cadastrar";
 }
 ?>
