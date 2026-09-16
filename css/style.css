@@ -1,0 +1,13 @@
+.fundo-pagina {
+    input {
+            padding: 8px;
+            margin: 5px;
+        }
+        form {
+            text-align: center;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+        }
+}
