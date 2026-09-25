@@ -1,11 +1,14 @@
 <?php
 
+include 'conexao.php';
+
 $nome = $_POST ['nome'];
 $cidade = $_POST['cidade'];
 $estrelas = $_POST['estrelas'];
-$senha = $_POST ['senha'];
 $email = $_POST ['email'];
-$sql = "INSERT INTO hoteis (nome,cidade,estrelas,email,senha) VALUES ('$nome', '$cidade', '$estrelas', '$senha', '$email')";
+$senha = $_POST ['senha'];
+$sql = "INSERT INTO hoteis (nome,cidade,estrelas,email,senha) VALUES
+('$nome', '$cidade', '$estrelas', '$email', '$senha')";
 
 if (mysqli_query($conexao, $sql)) {
     echo "Hotel cadastrado com sucesso";
