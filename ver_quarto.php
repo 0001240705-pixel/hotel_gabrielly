@@ -1,64 +1,53 @@
 <?php
+require_once "conexao.php"
+$hotel_id = $_GET ['hotel_id'];
 
-require_once "conexao.php";
-
-$id_hotel = $_GET['id_hotel'];
-
-$sql = "SELECT * FROM quartos WHERE id_hotel = '$id_hotel'";
-$resultado = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM quartos WHERE hotel_id = '$hotel_id' 
+and disponivel = 1";
+$resultado = mysqli_query($conexao, $sql);
 
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Quartos do Hotel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quartos disponiveis</title>
 </head>
 <body>
+    <h2> Quarto disponíveis no hotel selecionado</h2>
+    <table>
+        <tr>
+            <th>numero</th>
+            <th>tipo</th>
+            <th>Preço</th>
+        </tr>
+    <?php while ($linha = mysqli_fetch_assoc($resultado)) {
+       echo "<tr>
+        <td>".$linha['numero']."</td>
+        <td>".$linha['tipo']."</td>
+        <td>".$linha['preco_diaria']."</td>
+        </tr>";
+    }
 
-<h1>Quartos Disponíveis</h1>
-
-<table border="1">
-<tr>
-<th>Número</th>
-<th>Tipo</th>
-<th>Preço</th>
-</tr>
-
-<?php while ($quarto= mysqli_fetch_assoc($resultado)) { ?>
- <tr> <td><?php echo $quarto['numero']; ?></td> 
- <td><?php echo $quarto['tipo']; ?></td>
-  <td><?php echo $quarto['preco']; ?></td>
- </tr>
- <?php } ?>
-</table>
-<h2>Fazer Reserva</h2>
-
-<form action="salvar_reserva.php" method="POST">
- <label>ID do Cliente:</label> 
- <input type="number" name="id_cliente" required>
- <br><br>
-<label>ID do Quarto:</label>
-<input type="number" name="id_quarto" required>
-
-<br><br>
-
-<label>Data de Entrada:</label>
-<input type="date" name="data_entrada" required>
-
-<br><br>
-
-<label>Data de Saída:</label>
-<input type="date" name="data_saida" required>
-
-<br><br>
-
-<button type="submit">Confirmar Reserva</button>
-
-</form>
-
+    ?>
+    </table>
+    <h2>Preencha para reserva um quarto</h2>
+    <form action="salvar_reserva.php" method = "post"> 
+        <label for="id_cliente">ID do Cliente</label>
+        <input type="number" id= "id_cliente" name= "id_cliente">
+        <br><br>
+        <label for="id_quarto">ID do quarto</label>
+        <input type="number" id= "id_quarto" name= "id_quarto">
+        <br><br>
+        <label for="data_entrega">Data de entrega</label>
+        <input type="date" id= "data_entrega" name= "data_entrega">
+        <br><br>
+        <label for="data_saida">Data de saida</label>
+        <input type="date" id= "data_saida" name= "data_saida">
+        <br><br>
+        <button>Confirmar reserva</button>
+    </form>
 </body>
 </html>
-
-
