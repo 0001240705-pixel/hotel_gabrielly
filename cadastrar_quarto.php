@@ -28,7 +28,7 @@
 <button> Salvar quarto</button>
 </form>
 <br>
-<a href="logout_hotel.php">Sair do sistema</a>
+<a href="logout.php">Sair do sistema</a>
 
 </body>
 </html>

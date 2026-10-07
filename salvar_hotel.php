@@ -12,7 +12,7 @@ $sql = "INSERT INTO hoteis (nome,cidade,estrelas,email,senha) VALUES
 
 if (mysqli_query($conexao, $sql)) {
     echo "Hotel cadastrado com sucesso";
-    echo "<br> <a href= 'login.html.html'> Ir para Login </a>";
+    echo "<br> <a href= 'login.html'> Ir para Login </a>";
 }
 else {
 echo "Erro ao cadastrar";

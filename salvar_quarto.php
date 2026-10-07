@@ -11,7 +11,7 @@ VALUES ('$hotel_id', '$numero', '$tipo', '$preco_diaria', '$disponivel')";
 
 if (mysqli_query($conexao, $sql)) {
     echo "Quarto cadastrado com sucesso";
-    echo "<br><a href='login.html.html'>Ir para Login</a>";
+    echo "<br><a href='login.html'>Ir para Login</a>";
 } else {
     echo "Erro ao cadastrar";
 }

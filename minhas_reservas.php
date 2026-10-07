@@ -4,7 +4,7 @@ session_start();
 
 if ( !isset ($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 
-header ("Location: login.html.html");
+header ("Location: login.html");
 exit ();
 }
 
@@ -63,6 +63,8 @@ $resultado = mysqli_query($conexao, $sql);
 
 <br>
 <a href="listar_hoteis.php">Voltar à lista de hotéis</a>
+<br>
 
+<a href = "lougot.php"> Sair </a>
 </body>
 </html>

@@ -8,7 +8,7 @@ $senha = $_POST["senha"];
 $sql = "SELECT * FROM clientes WHERE email = '$email'";
 $resultado = mysqli_query($conexao, $sql);
 
-if (mysqli_num_rowa ($resultado) > 0) {
+if (mysqli_num_rows ($resultado) > 0) {
     while ($resultado = mysql_fetch_assoc($resultado)) {
     if (password_verify ($senha, $linha ['senha'])) {
         $_SESSION ['cliente_id'] = $linha ['id'];
@@ -19,7 +19,7 @@ if (mysqli_num_rowa ($resultado) > 0) {
     }
 }
  else {
-    header ("Location: login.html.html");
+    header ("Location: login.html");
     exit ();
  }
 ?>
