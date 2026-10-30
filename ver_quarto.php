@@ -8,7 +8,7 @@ if (isset($_GET['hotel_id'])) {
 } else {
     header("Location: listar_hoteis.php"); 
     exit();
-}
+
 ?>
 
 <!DOCTYPE html>
