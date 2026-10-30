@@ -29,7 +29,7 @@ while ($linha = mysqli_fetch_assoc($resultado)){
    echo "<tr>
         <td".$linha['nome']."> </td>
         <td".$linha['cidade']."> </td>
-       <td".$linha['estrela']."> </td>
+       <td".$linha['estrelas']."> </td>
        <td> <a href = 'ver_quarto.php'?
        id_hotel= ".$linha ['id'] ." Ver quartos </a> </td>
     </tr>

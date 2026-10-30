@@ -51,4 +51,5 @@ $resultado = mysqli_query($conexao, $sql);
 <a href="lougot.php">Sair</a>
 
 </body>
+
 </html>

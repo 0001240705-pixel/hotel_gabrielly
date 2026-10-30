@@ -1,11 +1,14 @@
 <?php
-require_once "conexao.php"
-$hotel_id = $_GET ['hotel_id'];
+require_once "conexao.php"; 
 
-$sql = "SELECT * FROM quartos WHERE hotel_id = '$hotel_id' 
-and disponivel = 1";
-$resultado = mysqli_query($conexao, $sql);
-
+if (isset($_GET['hotel_id'])) {
+    $hotel_id = $_GET['hotel_id'];
+    $sql = "SELECT * FROM quartos WHERE hotel_id = '$hotel_id' and disponivel = 1";
+    $resultado = mysqli_query($conexao, $sql);
+} else {
+    header("Location: listar_hoteis.php"); 
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
